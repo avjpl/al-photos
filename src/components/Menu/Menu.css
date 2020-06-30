@@ -1,0 +1,18 @@
+@import '@cssVariables';
+
+.menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: var(--white);
+  color: var(--black);
+}
+
+.menu__item {
+  display: inline-block;
+  padding: var(--space24) var(--space32);
+}
+
+.menu__item_right {
+  margin-left: auto;
+}

@@ -1,0 +1,33 @@
+@import '@cssVariables';
+
+.gallery {
+  column-count: 1;
+  column-gap: 0;
+  line-height: 0;
+
+  @media (--media-m) {
+    column-count: 2;
+  }
+
+  @media (--media-l) {
+    column-count: 3;
+  }
+
+  @media (--media-xl) {
+    column-count: 4;
+  }
+}
+
+.img {
+  display: block;
+  object-fit: cover;
+  object-position: 65% 65%;
+  width: 100%;
+  height: auto;
+}
+
+.gallery,
+.gallery img {
+  column-gap: var(--space1);
+  margin-bottom: var(--space1);
+}
