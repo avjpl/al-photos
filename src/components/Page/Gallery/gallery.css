@@ -1,23 +1,5 @@
 @import '@cssVariables';
 
-.gallery {
-  column-count: 1;
-  column-gap: 0;
-  line-height: 0;
-
-  @media (--media-m) {
-    column-count: 2;
-  }
-
-  @media (--media-l) {
-    column-count: 3;
-  }
-
-  @media (--media-xl) {
-    column-count: 4;
-  }
-}
-
 .img {
   display: block;
   object-fit: cover;
@@ -26,8 +8,40 @@
   height: auto;
 }
 
-.gallery,
-.gallery img {
-  column-gap: var(--space1);
-  margin-bottom: var(--space1);
+.filter__group {
+  align-self: flex-end;
+  margin-bottom: var(--space10);
+}
+
+.filter__button {
+  background: none;
+  border: none;
+}
+
+:global .grid-sizer,
+:global .grid-item {
+  width: 50%;
+
+  @media (--media-m) {
+    width: 50%;
+  }
+
+  @media (--media-l) {
+    width: 33.3333333%
+  }
+
+  @media (--media-xl) {
+    background-color: green;
+    width: 25%;
+  }
+}
+
+:global .grid-item {
+  float: left;
+}
+
+:global .grid:after {
+  content: '';
+  display: block;
+  clear: both;
 }

@@ -1,0 +1,10 @@
+.error__message {
+  color: lightcoral;
+}
+
+.error__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 67px);
+}

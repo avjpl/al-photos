@@ -1,8 +1,9 @@
+
+const { SourceMapDevToolPlugin } = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
-    // public: '680980bb9161.ngrok.io',
     historyApiFallback: true,
     stats: 'errors-only',
     host,
@@ -99,6 +100,16 @@ exports.loadJavaScript = ({ include, exclude } = {}) => ({
 
 exports.generateSourceMaps = ({ type }) => ({
   devtool: type,
+});
+
+exports.generateDevSourceMaps = (options) => ({
+  plugins: [
+    new SourceMapDevToolPlugin({
+      filename: 'sourcemaps/[name].[chunkhash].js.map',
+      exclude: ['vendor.js'],
+      ...options
+    }),
+  ]
 });
 
 exports.logger = (a, b) => {

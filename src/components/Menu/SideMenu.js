@@ -10,10 +10,7 @@ const classes = {
   enter: styles['sideMenu-enter'],
   enterActive: styles['sideMenu-enter-active'],
   enterDone: styles['sideMenu-enter-active'],
-  // exit: styles['sideMenu-exit'],
-  // exitActive: styles['sideMenu-exit-active'],
-  // exitDone: styles['sideMenu-exit-active'],
-}
+};
 
 const SideMenu = ({ setToggleMenu, toggleMenu }) => {
   return createPortal(

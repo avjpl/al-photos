@@ -1,0 +1,22 @@
+@import '@cssVariables';
+
+.error500 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - (42px + 90px));
+  font-weight: normal;
+}
+
+.error500__heading {
+  font-size: 13rem;
+}
+
+.error500__subheading {
+  background: var(--white);
+  padding: 10px 70px;
+  font-size: var(--font-size-l);
+  margin-top: -54px;
+  background: rgba(255, 255, 255, .9);
+}

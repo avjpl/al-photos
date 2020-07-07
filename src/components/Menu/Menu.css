@@ -10,7 +10,21 @@
 
 .menu__item {
   display: inline-block;
-  padding: var(--space24) var(--space32);
+  padding: 0 var(--space32);
+}
+
+.menu__item a {
+  color: var(--black);
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.menu__item__logo a {
+  color: var(--black);
+}
+
+:global .active {
+  
 }
 
 .menu__item_right {

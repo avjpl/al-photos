@@ -6,13 +6,14 @@ const {
   extractCSS,
   loadImages,
   loadFonts,
+  generateDevSourceMaps
 } = require('./webpack.parts');
 
 module.exports = merge([
   {
     output: {
-      chunkFilename: "[name].[chunkhash:4].js",
-      filename: "[name].[chunkhash:4].js",
+      chunkFilename: '[name].[chunkhash:4].js',
+      filename: '[name].[chunkhash:4].js',
     },
   },
   {
@@ -75,4 +76,6 @@ module.exports = merge([
       },
     },
   },
+  generateDevSourceMaps({}),
+  // generateSourceMaps({ type: 'cheap-module-source-map' }),
 ]);
