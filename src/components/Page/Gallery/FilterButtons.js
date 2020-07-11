@@ -8,11 +8,15 @@ const FilterButtons = ({ categories, onFilter }) => {
   return (
     <div className={css.filterGroup}>
       {
-        categoriesList.map((category) => {
-          const filterName = category === '*' ? '*' : category;
+        categoriesList.map(category => {
+          const filterProps = (category) => ({
+            'data-filter': (category =>  category.includes('*') ? '*' : `.${category?.toLowerCase()}`)(category)
+          });
+          const label = category.replace('*', 'All');
+
           return (
-            <button key={filterName} className={`${css.filterButton}`} onClick={onFilter} data-filter={`.${filterName.toLowerCase()}`}>
-              {filterName.replace('*', 'All')}
+            <button key={label} className={`${css.filterButton}`} onClick={onFilter} {...filterProps(category)}>
+              {label}
             </button>
           );
         })
